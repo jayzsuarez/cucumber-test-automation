@@ -32,7 +32,7 @@ public class ProfileManagementSteps {
         String lName = faker.name().lastName();
 
         name =  fName + " " + lName;
-        System.out.println("hoho " + name);
+
         try {
             String myRequest = "{\n" +
                     "    \"name\": \"" + name + "\",\n" +
@@ -40,7 +40,7 @@ public class ProfileManagementSteps {
                     "    \"gender\": \"male\",\n" +
                     "    \"status\": \"inactive\"\n" +
                     "}";
-            System.out.println(myRequest);
+
             response = ApiResponse.getRestAssuredPostResponse(baseUri, basePath, RequestHttpUtils.getBearerTokenHeaders(gajiGesaToken), myRequest);
             //responseBody = response.getBody().asString();
             statusCode = response.getStatusCode();
