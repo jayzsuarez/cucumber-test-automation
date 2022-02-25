@@ -3,7 +3,6 @@ package utils;
 import constants.CharConstants;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
@@ -49,4 +48,10 @@ public class FileUtil {
         }
         return finalResult;
     }
+
+    public static String getSetting(String key, String... params) {
+        key = key.replace(CharConstants.SPECIALCHAR_SETTINGS, "");
+        return readPropertiesFile("application-settings.properties", key, params);
+    }
+
 }
