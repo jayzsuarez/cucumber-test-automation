@@ -7,6 +7,16 @@ public class ProfileEntity {
     private String gender;
     private String status;
 
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    private String message;
+
 
     public Integer getId() {
         return id;

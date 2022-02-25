@@ -25,6 +25,10 @@ public class ApiResponse {
         return given().baseUri(baseUri).basePath(basePath).urlEncodingEnabled(false).headers(header).when().get();
     }
 
+    public static Response getDeletedResponse(String baseUri, String basePath, HttpHeaders header) {
+        return given().baseUri(baseUri).basePath(basePath).urlEncodingEnabled(false).headers(header).when().delete();
+    }
+
     public static Response getRawResponse(String baseUri, String basePath, HttpHeaders header) {
         return given().urlEncodingEnabled(false).headers(header).when().get(baseUri + basePath);
     }
@@ -51,6 +55,10 @@ public class ApiResponse {
 
     public static Response getRestAssuredPostResponse(String baseUri, String basePath, HttpHeaders headers, String fileWithValues) {
         return given().baseUri(baseUri).basePath(basePath).headers(headers).body(fileWithValues).when().post();
+    }
+
+    public static Response getRestAssuredPatchResponse(String baseUri, String basePath, HttpHeaders headers, String fileWithValues) {
+        return given().baseUri(baseUri).basePath(basePath).headers(headers).body(fileWithValues).when().patch();
     }
 
     public static Response getRestAssuredPutResponse(String baseUri, String basePath, HttpHeaders headers, String fileWithValues) {
